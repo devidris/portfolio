@@ -1,0 +1,120 @@
+@import "../../styles.scss";
+
+@keyframes popinAndOut {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@mixin navlink {
+  list-style: none;
+  font-size: 1.8rem;
+  text-align: center;
+  transition: all 1s;
+
+  svg {
+    display: block;
+    cursor: pointer;
+    stroke-dasharray: 350;
+  }
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5rem;
+
+  img {
+    width: 10rem;
+    height: 10rem;
+    cursor: pointer;
+    &:hover {
+      animation: popinAndOut 1s ease-in-out infinite;
+    }
+  }
+
+  .ul-light {
+    display: flex;
+    gap: 5rem;
+
+    .defaultList {
+      @include navlink;
+
+      a:hover + svg {
+        stroke-dashoffset: 0;
+      }
+
+      svg {
+        transition: all 2.5s;
+        stroke-dashoffset: 250;
+      }
+    }
+
+    .animatedList {
+      @include navlink;
+
+      a:hover + svg {
+        stroke-dashoffset: 0;
+      }
+
+      svg {
+        transition: all 2.5s;
+        stroke-dashoffset: 350;
+      }
+    }
+  }
+
+  .ul-dark {
+    display: flex;
+    gap: 5rem;
+
+    .defaultList {
+      @include navlink;
+
+      a {
+        color: #fff;
+      }
+      a:hover + svg {
+        stroke-dashoffset: 0;
+      }
+
+      svg {
+        transition: all 2.5s;
+        stroke-dashoffset: 250;
+      }
+    }
+
+    .animatedList {
+      @include navlink;
+
+      a {
+        color: #fff;
+      }
+      a:hover + svg {
+        stroke-dashoffset: 0;
+      }
+
+      svg {
+        transition: all 2.5s;
+        stroke-dashoffset: 350;
+      }
+    }
+  }
+
+  mat-icon {
+    @include center;
+    width: 7rem;
+    height: 7rem;
+    font-size: 4rem;
+    cursor: pointer;
+    &:hover {
+      animation: popinAndOut 1s ease-in-out infinite;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+@import "../../styles.scss";
+
+footer {
+  background: #000;
+  color: #fff;
+  @include center;
+  flex-direction: column;
+  padding: 5rem 0;
+
+  div {
+    width: max-content;
+    @include center;
+    flex-direction: column;
+  }
+  img {
+    width: 20rem;
+    padding-bottom: 3rem;
+  }
+  h1 {
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 800;
+    width: 50%;
+    text-align: center;
+
+    span {
+      font-weight: 300;
+    }
+  }
+  h3{
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 1.8rem;
+  }
+  p{
+    font-family: "Josefin Sans", sans-serif;
+  }
+}

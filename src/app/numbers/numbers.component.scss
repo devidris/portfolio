@@ -1,0 +1,20 @@
+#numbers {
+  background: #000;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  color: #fff;
+  padding: 7rem;
+  align-items: center;
+  justify-items: center;
+  font-family: "Josefin Sans", sans-serif;
+
+  h1{
+    font-size: 5rem;
+    font-weight: 300;
+  }
+  h3{
+    font-size: 2rem;
+    font-weight: 300;
+  }
+}
+

@@ -1,0 +1,30 @@
+#newsletter {
+  background-image: url(../../assets/background.png);
+  padding: 7rem;
+
+  h1 {
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 800;
+    font-size: 5rem;
+  }
+
+  input {
+    border: none;
+    padding: 1rem 2rem;
+    border-bottom: 0.1rem solid #000;
+    width: 50%;
+    font-size: 1.8;
+    background: transparent;
+
+    &:placeholder-shown {
+      font-family: "Josefin Sans", sans-serif;
+      font-weight: 300;
+      font-size: 1.8rem;
+      color: #000;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
