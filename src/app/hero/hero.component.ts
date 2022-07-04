@@ -35,7 +35,7 @@ import {
     trigger('g_0101', [
       state('hero_01', style({ opacity: 1 })),
       transition(
-        '*=>hero_01',
+        ':enter',
         animate(
           '2s',
           keyframes([
@@ -48,7 +48,7 @@ import {
     trigger('g_0102', [
       state('hero_01', style({ opacity: 1, transform: 'translateY(0%)' })),
       transition(
-        '*=>hero_01',
+        ':enter',
         animate(
           '3s 2s',
           keyframes([
@@ -61,7 +61,7 @@ import {
     trigger('g_0103', [
       state('hero_01', style({ opacity: 1, transform: 'translateX(0%)' })),
       transition(
-        '*=>hero_01',
+        ':enter',
         animate(
           '3s 2s',
           keyframes([
@@ -74,7 +74,7 @@ import {
     trigger('g_0104', [
       state('hero_01', style({ opacity: 1, transform: 'translateX(0%)' })),
       transition(
-        '*=>hero_01',
+        ':enter',
         animate(
           '3s 2s',
           keyframes([
@@ -87,7 +87,7 @@ import {
     trigger('g_0105', [
       state('hero_01', style({ opacity: 1, transform: 'translateX(0%)' })),
       transition(
-        '*=>hero_01',
+        ':enter',
         animate(
           '3s 2s',
           keyframes([
@@ -101,7 +101,7 @@ import {
     trigger('g_0106', [
       state('hero_01', style({ opacity: 1 })),
       transition(
-        '*=>hero_01',
+        ':enter',
         animate(
           '3s 5s',
           keyframes([
@@ -114,7 +114,7 @@ import {
     trigger('g_0107', [
       state('hero_01', style({ opacity: 1 })),
       transition(
-        '*=>hero_01',
+        ':enter',
         animate(
           '4s 3s',
           keyframes([
@@ -127,7 +127,7 @@ import {
     trigger('g_0108', [
       state('hero_01', style({ opacity: 1, transform: 'translateY(0%)' })),
       transition(
-        '*=>hero_01',
+        ':enter',
         animate(
           '3s 2s',
           keyframes([
@@ -142,7 +142,7 @@ import {
     trigger('g_0109', [
       state('hero_01', style({ opacity: 1, transform: 'translateX(0%)' })),
       transition(
-        '*=>hero_01',
+        ':enter',
         animate(
           '3s 1.1s',
           keyframes([
@@ -155,7 +155,7 @@ import {
     trigger('g_01010', [
       state('hero_01', style({ opacity: 1, transform: 'scaleX(1)' })),
       transition(
-        '*=>hero_01',
+        ':enter',
         animate(
           '2s 6.5s',
           keyframes([
@@ -168,7 +168,7 @@ import {
     trigger('g_01011', [
       state('hero_01', style({ opacity: 1, transform: 'translateY(0%)' })),
       transition(
-        '*=>hero_01',
+        ':enter',
         animate(
           '2s 4s',
           keyframes([
@@ -181,7 +181,7 @@ import {
     trigger('g_01012', [
       state('hero_01', style({ opacity: 1, transform: 'translateY(0%)' })),
       transition(
-        '*=>hero_01',
+        ':enter',
         animate(
           '2s 2s',
           keyframes([
@@ -194,7 +194,7 @@ import {
     trigger('g_01013', [
       state('hero_01', style({ opacity: 1, transform: 'translateX(0%)' })),
       transition(
-        '*=>hero_01',
+        ':enter',
         animate(
           '3s 2s',
           keyframes([
@@ -213,7 +213,7 @@ export class HeroComponent implements OnInit {
   xi: number = 0;
   yi: number = 0;
   move: string = 'end';
-  hero: string = 'hero_01';
+  hero: string = 'hero_02';
 
   constructor() {}
 
@@ -265,22 +265,22 @@ export class HeroComponent implements OnInit {
       }
     }
 
-    if (calc === 'add') {
+    if (calc === 'sub') {
       let heroNumber = this.hero[this.hero.length - 1];
       if (heroNumber === '1') {
-        heroNumber = '2';
-        this.hero = `hero_0${heroNumber}`;
-
-        return;
-      }
-      if (heroNumber === '2') {
         heroNumber = '3';
         this.hero = `hero_0${heroNumber}`;
 
         return;
       }
-      if (heroNumber === '3') {
+      if (heroNumber === '2') {
         heroNumber = '1';
+        this.hero = `hero_0${heroNumber}`;
+
+        return;
+      }
+      if (heroNumber === '3') {
+        heroNumber = '2';
         this.hero = `hero_0${heroNumber}`;
 
         return;
