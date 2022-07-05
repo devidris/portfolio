@@ -19,7 +19,7 @@
       (mouseover)="hovered($event)"
       (mouseout)="unHovered()"
       [@move]="{ value: move, params: { xi: this.xi, yi: this.yi } }"
-      *ngIf="hero === 'hero_01'"
+      *ngIf="hero === 'hero_01' || hero === 'initial'"
     >
       <g class="delay" [@g_0101]="hero">
         <path
@@ -1316,7 +1316,11 @@
       </g>
     </svg>
 
-    <img src="/assets/03_hero.svg" alt="Third hero " *ngIf="hero === 'hero_03'"/>
+    <img
+      src="/assets/03_hero.svg"
+      alt="Third hero "
+      *ngIf="hero === 'hero_03'"
+    />
     <div
       id="right"
       [ngClass]="hero === 'hero_02' ? 'dark-toggle' : 'light-toggle'"
@@ -1325,13 +1329,17 @@
       <mat-icon>arrow_forward_ios</mat-icon>
     </div>
     <div id="text" (mouseover)="hovered($event)" (mouseout)="unHovered()">
-      <ng-container *ngIf="hero === 'hero_01'">
+      <ng-container *ngIf="hero === 'hero_01' || hero === 'initial'">
         I create <span>website</span> that <span>stands</span> out</ng-container
       >
       <ng-container *ngIf="hero === 'hero_02'">
         If you can <span>think</span> it i can
         <span>build</span> it</ng-container
       >
+
+      <ng-container *ngIf="hero === 'hero_03'">
+        Innovative <span>takes</span> on modern <span>design</span>
+      </ng-container>
     </div>
     <div id="toggle">
       <svg
