@@ -342,7 +342,7 @@ export class HeroComponent implements OnInit {
   xi: number = 0;
   yi: number = 0;
   move: string = 'end';
-  hero: string = 'hero_02';
+  hero: string = 'hero_03';
 
   constructor() {}
 
