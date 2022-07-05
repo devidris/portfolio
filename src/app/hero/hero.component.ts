@@ -14,24 +14,6 @@ import {
   templateUrl: './hero.component.html',
   styleUrls: ['./hero.component.scss'],
   animations: [
-    trigger('move', [
-      state(
-        'start',
-        style({
-          transform: 'translate({{xi}}%,{{yi}}%)',
-        }),
-        { params: { xi: 0, yi: 0 } }
-      ),
-      state(
-        'end',
-        style({
-          transform: 'translate({{xi}}%,{{yi}}%)',
-        }),
-        { params: { xi: 0, yi: 0 } }
-      ),
-      transition('end<=>start', [animate('500ms')]),
-    ]),
-
     trigger('g_0101', [
       state('hero_01', style({ opacity: 1 })),
       transition(
@@ -204,6 +186,153 @@ import {
         )
       ),
     ]),
+    trigger('move', [
+      state(
+        'start',
+        style({
+          transform: 'translate({{xi}}%,{{yi}}%)',
+        }),
+        { params: { xi: 0, yi: 0 } }
+      ),
+      state(
+        'end',
+        style({
+          transform: 'translate({{xi}}%,{{yi}}%)',
+        }),
+        { params: { xi: 0, yi: 0 } }
+      ),
+      transition('end<=>start', [animate('500ms')]),
+    ]),
+    trigger('g_0201', [
+      state('hero_02', style({ opacity: 1, transform: 'translateX(0%)' })),
+      transition(
+        '*=>hero_02',
+        animate(
+          '.7s',
+          keyframes([
+            style({ opacity: 0, transform: 'translateX(-100%)', offset: 0 }),
+            style({ opacity: 1, transform: 'translateX(0%)', offset: 1 }),
+          ])
+        )
+      ),
+    ]),
+    trigger('g_0202', [
+      state('hero_02', style({ opacity: 1, transform: 'translateY(0%)' })),
+      transition(
+        '*=>hero_02',
+        animate(
+          '.5s .8s',
+          keyframes([
+            style({ opacity: 0, transform: 'translateY(-200%)', offset: 0 }),
+            style({ opacity: 1, transform: 'translateY(0%)', offset: 1 }),
+          ])
+        )
+      ),
+    ]),
+    trigger('g_0203', [
+      state('hero_02', style({ opacity: 1 })),
+      transition(
+        '*=>hero_02',
+        animate(
+          '4s 1.5s',
+          keyframes([
+            style({ opacity: 0, offset: 0 }),
+            style({ opacity: 1, offset: 1 }),
+          ])
+        )
+      ),
+    ]),
+    trigger('g_0204', [
+      state('hero_02', style({ opacity: 1, transform: 'translateX(0%)' })),
+      transition(
+        '*=>hero_02',
+        animate(
+          '.5s 1.5s',
+          keyframes([
+            style({ opacity: 0, transform: 'translateX(100%)', offset: 0 }),
+            style({ opacity: 1, transform: 'translateX(0%)', offset: 1 }),
+          ])
+        )
+      ),
+    ]),
+    trigger('g_0205', [
+      state('hero_02', style({ opacity: 1 })),
+      transition(
+        '*=>hero_02',
+        animate(
+          '1s 2s',
+          keyframes([
+            style({ opacity: 0, offset: 0 }),
+            style({ opacity: 1, offset: 1 }),
+          ])
+        )
+      ),
+    ]),
+    trigger('g_0206', [
+      state('hero_02', style({ opacity: 1, transform: 'translateY(0%)' })),
+      transition(
+        '*=>hero_02',
+        animate(
+          '1s 2s',
+          keyframes([
+            style({ opacity: 0, transform: 'translateY(-100%)', offset: 0 }),
+            style({ opacity: 1, transform: 'translateY(0%)', offset: 1 }),
+          ])
+        )
+      ),
+    ]),
+     trigger('g_0207', [
+      state('hero_02', style({ opacity: 1, transform: 'translateX(0%)' })),
+      transition(
+        '*=>hero_02',
+        animate(
+          '1s 2s',
+          keyframes([
+            style({ opacity: 0, transform: 'translateX(-100%)', offset: 0 }),
+            style({ opacity: 1, transform: 'translateX(0%)', offset: 1 }),
+          ])
+        )
+      ),
+    ]),
+    trigger('g_0208', [
+      state('hero_02', style({ opacity: 1, transform: 'translateY(0%)' })),
+      transition(
+        '*=>hero_02',
+        animate(
+          '1s 2s',
+          keyframes([
+            style({ opacity: 0, transform: 'translateY(-100%)', offset: 0 }),
+            style({ opacity: 1, transform: 'translateY(0%)', offset: 1 }),
+          ])
+        )
+      ),
+    ]),
+    trigger('g_0209', [
+      state('hero_02', style({ opacity: 1, transform: 'translateY(0%)' })),
+      transition(
+        '*=>hero_02',
+        animate(
+          '1s 2s',
+          keyframes([
+            style({ opacity: 0, transform: 'translateY(100%)', offset: 0 }),
+            style({ opacity: 1, transform: 'translateY(0%)', offset: 1 }),
+          ])
+        )
+      ),
+    ]),
+    trigger('g_0210', [
+      state('hero_02', style({ opacity: 1 })),
+      transition(
+        '*=>hero_02',
+        animate(
+          '2s 3s',
+          keyframes([
+            style({ opacity: 0, offset: 0 }),
+            style({ opacity: 1, offset: 1 }),
+          ])
+        )
+      ),
+    ]),
   ],
 })
 export class HeroComponent implements OnInit {
@@ -217,6 +346,11 @@ export class HeroComponent implements OnInit {
 
   constructor() {}
 
+  // Gernate positive and negative number
+  generate(sign: number) {
+    return `${100 * sign}`;
+  }
+  // Generates numbers depending on how you move your mouse
   hovered(e: any) {
     if (this.i === 0) {
       this.x = e.screenX;
@@ -236,12 +370,14 @@ export class HeroComponent implements OnInit {
     this.move = 'start';
   }
 
+  // Reset the xi and yi
   unHovered() {
     this.xi = 0;
     this.yi = 0;
     this.move = 'end';
   }
 
+  // Toggling from one hero to another
   changeHero(heroPosition: string, calc: string | null = null) {
     if (calc === 'add') {
       let heroNumber = this.hero[this.hero.length - 1];

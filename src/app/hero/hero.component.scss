@@ -165,3 +165,24 @@ g {
 svg {
   transition: all 500;
 }
+
+@keyframes dash {
+  0% {
+    opacity: 0;
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+  }
+  100% {
+    opacity: 1;
+    stroke-dasharray: 5.19 5.19;
+    stroke-dashoffset: 0;
+  }
+}
+
+.dasharray {
+  opacity: 0;
+  stroke-dasharray: 5.19 5.19;
+  stroke-dashoffset: 100;
+  animation: dash 3s 3s;
+  animation-fill-mode: forwards;
+}
