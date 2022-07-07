@@ -574,6 +574,6 @@ export class HeroComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    setInterval(()=>this.changeHero('','add'), 15000)
   }
 }
