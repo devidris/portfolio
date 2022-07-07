@@ -1,10 +1,7 @@
 #homepage {
   position: relative;
   overflow-x: hidden;
-  #content {
-    display: grid;
-    row-gap: 5rem;
-  }
+
   #sidebar {
     position: fixed;
     z-index: 10;
