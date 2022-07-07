@@ -127,7 +127,7 @@ import {
       transition(
         '*=>hero_01',
         animate(
-          '3s 2s',
+          '1.5s 1s',
           keyframes([
             style({ opacity: 0, transform: 'translateX(-100%)', offset: 0 }),
             style({ opacity: 0.7, transform: 'translateX(10%)', offset: 0.7 }),
@@ -574,6 +574,6 @@ export class HeroComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    setInterval(()=>this.changeHero('','add'), 15000)
+    setInterval(() => this.changeHero('', 'add'), 15000);
   }
 }
