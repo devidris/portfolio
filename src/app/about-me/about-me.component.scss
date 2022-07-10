@@ -1,5 +1,5 @@
 #about-me {
-  padding: 0 15rem;
+  padding: 7rem 15rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
@@ -18,7 +18,7 @@
       }
     }
   }
-  img {
+  img:first-child {
     width: 30rem;
     aspect-ratio: 1/1;
     clip-path: polygon(
@@ -30,5 +30,30 @@
       0 69%,
       0 23%
     );
+  }
+}
+
+#about-me_img {
+  position: relative;
+  width: 39rem;
+  aspect-ratio: 1/1;
+
+  #paint {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  #trapezium {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  #i {
+    width: 40%;
+    position: absolute;
+    top: 20%;
+    right: -20%;
   }
 }

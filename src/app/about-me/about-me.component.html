@@ -8,5 +8,31 @@
       Building world-class online apps is my passion.
     </p>
   </div>
-  <img src="assets/paint.jpg" alt="Paint" />
+
+  <div id="about-me_img" (mouseover)="hovered($event)" (mouseout)="unHovered()">
+    <img
+      src="assets/paint.jpg"
+      id="paint"
+      alt="Paint"
+      [@move]="{
+        value: move,
+        params: { xi: this.xi * 2.5, yi: this.yi * 2.5 }
+      }"
+    />
+    <img
+      src="assets/about-me-shape.png"
+      id="trapezium"
+      alt="Trapezium"
+      [@move]="{ value: move, params: { xi: this.xi * 2, yi: this.yi * 2 } }"
+    />
+    <img
+      src="assets/i.png"
+      id="i"
+      alt="Letter I"
+      [@move]="{
+        value: move,
+        params: { xi: this.xi * 1.5, yi: this.yi * 1.5 }
+      }"
+    />
+  </div>
 </div>
